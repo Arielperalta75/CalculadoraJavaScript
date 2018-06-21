@@ -154,8 +154,7 @@ var calculadora = {
                
         });
         function formatoNumero(numero){
-            var redondeo = 0;
-             
+            var redondeo = 0;    
         }
         raiz.addEventListener("mousedown",function(){
             raiz.setAttribute("style", "transform:scale(0.95,0.95)");
@@ -239,13 +238,15 @@ var calculadora = {
     },
     signo: function() {
         var cadena = display.innerHTML;
-        var i = cadena.indexOf("-");
-        if (i == -1){
-            display.innerHTML = "-" + cadena;
-        } else{
-            cadena = cadena.substring(1,cadena.length);
-            display.innerHTML = cadena;
-        }
+        cadena = parseInt(cadena)*(-1);
+        display.innerHTML = cadena;
+        //var i = cadena.indexOf("-");
+       // if (i == -1){
+            //display.innerHTML = "-" + cadena;
+        //} else{
+            //cadena = cadena.substring(1,cadena.length);
+            //display.innerHTML = cadena;
+        //}
     },
     operandos: function(op){
         switch(op){
@@ -375,11 +376,11 @@ var calculadora = {
 function acomodarDisplay(){
     var cadena = display.innerHTML;
     var numero = parseFloat(cadena);
-    limite = 8;
+     var limite = 8;
     if (cadena.indexOf(".") != -1){
         limite++;
     }
-    if (cadena.indexOf("-")!= -1){
+    if (cadena.indexOf("-") != -1){
         limite++;
     }
      
