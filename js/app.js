@@ -1,11 +1,12 @@
+
 var display = document.getElementById("display");
 var operandos = {
-            operador: "",
-            operadorAnt: "",
-            numAnt: 0
-        };
+    operador: "",
+    operadorAnt: "",
+    numAnt: 0
+};
 var calculadora = {
-    init: function(){
+    init: function () {
         var self = this;
         var cero = document.getElementById("0");
         var uno = document.getElementById("1");
@@ -26,376 +27,288 @@ var calculadora = {
         var menos = document.getElementById("menos");
         var mas = document.getElementById("mas");
         var igual = document.getElementById("igual");
-        cero.addEventListener("click",function(){
+        cero.addEventListener("click", function () {
             self.numero("0");
         });
-        cero.addEventListener("mousedown", function(){
-            cero.setAttribute("style","transform:scale(0.95,0.95)");
+        cero.addEventListener("mousedown", function () {
+            cero.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        cero.addEventListener("mouseout", function(){
-            cero.setAttribute("style","transform:scale(1,1)");
+        cero.addEventListener("mouseout", function () {
+            cero.setAttribute("style", "transform:scale(1,1)");
         });
-        uno.addEventListener("click",function(){
+        uno.addEventListener("click", function () {
             self.numero("1");
         });
-        uno.addEventListener("mousedown",function(){
-            uno.setAttribute("style","transform:scale(0.95,0.95)");
+        uno.addEventListener("mousedown", function () {
+            uno.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        uno.addEventListener("mouseout",function(){
-            uno.setAttribute("style","transform:scale(1,1)");
+        uno.addEventListener("mouseout", function () {
+            uno.setAttribute("style", "transform:scale(1,1)");
         });
- 
-        dos.addEventListener("click", function(){
+
+        dos.addEventListener("click", function () {
             self.numero("2");
         });
-        dos.addEventListener("mousedown",function(){   
-            dos.setAttribute("style","transform:scale(0.95,0.95)");
+        dos.addEventListener("mousedown", function () {
+            dos.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        dos.addEventListener("mouseout",function(){
-            dos.setAttribute("style","transform:scale(1,1)");
+        dos.addEventListener("mouseout", function () {
+            dos.setAttribute("style", "transform:scale(1,1)");
         });
-        tres.addEventListener("click", function(){
+        tres.addEventListener("click", function () {
             self.numero("3");
         });
-        tres.addEventListener("mousedown",function(){
-           tres.setAttribute("style","transform:scale(0.95,0.95)");
+        tres.addEventListener("mousedown", function () {
+            tres.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        tres.addEventListener("mouseout",function(){
-           tres.setAttribute("style","transform:scale(1,1)");
+        tres.addEventListener("mouseout", function () {
+            tres.setAttribute("style", "transform:scale(1,1)");
         });
-        cuatro.addEventListener("click", function(){
-             self.numero("4");
+        cuatro.addEventListener("click", function () {
+            self.numero("4");
         });
-        cuatro.addEventListener("mousedown",function(){
-            cuatro.setAttribute("style","transform:scale(0.95,0.95)");
+        cuatro.addEventListener("mousedown", function () {
+            cuatro.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        cuatro.addEventListener("mouseout",function(){
-            cuatro.setAttribute("style","transform:scale(1,1)");
+        cuatro.addEventListener("mouseout", function () {
+            cuatro.setAttribute("style", "transform:scale(1,1)");
         });
-        cinco.addEventListener("click",function(){
+        cinco.addEventListener("click", function () {
             self.numero("5");
         });
-        cinco.addEventListener("mousedown",function(){
-            cinco.setAttribute("style","transform:scale(0.95,0.95)");
+        cinco.addEventListener("mousedown", function () {
+            cinco.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        cinco.addEventListener("mouseout",function(){
-            cinco.setAttribute("style","transform:scale(1,1)");
+        cinco.addEventListener("mouseout", function () {
+            cinco.setAttribute("style", "transform:scale(1,1)");
         });
-        seis.addEventListener("click",function(){
+        seis.addEventListener("click", function () {
             self.numero("6");
         });
-        seis.addEventListener("mousedown",function(){
-            seis.setAttribute("style","transform:scale(0.95,0.95)");
+        seis.addEventListener("mousedown", function () {
+            seis.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        seis.addEventListener("mouseout",function(){
-            seis.setAttribute("style","transform:scale(1,1)");
+        seis.addEventListener("mouseout", function () {
+            seis.setAttribute("style", "transform:scale(1,1)");
         });
-        siete.addEventListener("click",function(){
+        siete.addEventListener("click", function () {
             self.numero("7");
         });
-        siete.addEventListener("mousedown",function(){
-            siete.setAttribute("style","transform:scale(0.95,0.95)");
+        siete.addEventListener("mousedown", function () {
+            siete.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        siete.addEventListener("mouseout",function(){
-            siete.setAttribute("style","transform:scale(1,1)");
+        siete.addEventListener("mouseout", function () {
+            siete.setAttribute("style", "transform:scale(1,1)");
         });
-        ocho.addEventListener("click",function(){
+        ocho.addEventListener("click", function () {
             self.numero("8");
         });
-        ocho.addEventListener("mousedown",function(){
-            ocho.setAttribute("style","transform:scale(0.95,0.95)");
+        ocho.addEventListener("mousedown", function () {
+            ocho.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        ocho.addEventListener("mouseout",function(){
-            ocho.setAttribute("style","transform:scale(1,1)");
+        ocho.addEventListener("mouseout", function () {
+            ocho.setAttribute("style", "transform:scale(1,1)");
         });
-        nueve.addEventListener("click", function(){
+        nueve.addEventListener("click", function () {
             self.numero("9");
         });
-        nueve.addEventListener("mousedown",function(){
-            nueve.setAttribute("style","transform:scale(0.95,0.95)");
+        nueve.addEventListener("mousedown", function () {
+            nueve.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        nueve.addEventListener("mouseout",function(){
-            nueve.setAttribute("style","transform:scale(1,1)");
+        nueve.addEventListener("mouseout", function () {
+            nueve.setAttribute("style", "transform:scale(1,1)");
         });
-        punto.addEventListener("click", function(){
+        punto.addEventListener("click", function () {
             self.numero(".");
         });
-        punto.addEventListener("mousedown", function(){
-            punto.setAttribute("style","transform:scale(0.95,0.95)");
+        punto.addEventListener("mousedown", function () {
+            punto.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        punto.addEventListener("mouseout", function(){
-            punto.setAttribute("style","transform:scale(1,1)");
+        punto.addEventListener("mouseout", function () {
+            punto.setAttribute("style", "transform:scale(1,1)");
         });
-        on.addEventListener("click", function(){
+        on.addEventListener("click", function () {
             display.innerHTML = "0";
             operandos.numAnt = 0;
             operandos.operador = "";
             operandos.operadorAnt = "";
         });
-        on.addEventListener("mousedown", function(){ 
+        on.addEventListener("mousedown", function () {
             on.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        on.addEventListener("mouseout", function(){
+        on.addEventListener("mouseout", function () {
             on.setAttribute("style", "transform:scale(1,1)");
         });
-        sign.addEventListener("click", function(){
+        sign.addEventListener("click", function () {
             self.signo();
         });
-        sign.addEventListener("mousedown", function(){
+        sign.addEventListener("mousedown", function () {
             sign.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        sign.addEventListener("mouseout", function(){
+        sign.addEventListener("mouseout", function () {
             sign.setAttribute("style", "transform:scale(1,1)");
         });
-        raiz.addEventListener("click", function(){
-            display.innerHTML= Math.sqrt(parseFloat(display.innerHTML));
+        raiz.addEventListener("click", function () {
+            display.innerHTML = Math.sqrt(parseFloat(display.innerHTML));
             acomodarDisplay();
-             
-               
+
+
         });
-        function formatoNumero(numero){
-            var redondeo = 0;    
+        function formatoNumero(numero) {
+            var redondeo = 0;
         }
-        raiz.addEventListener("mousedown",function(){
+        raiz.addEventListener("mousedown", function () {
             raiz.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        raiz.addEventListener("mouseout",function(){
+        raiz.addEventListener("mouseout", function () {
             raiz.setAttribute("style", "transform:scale(1,1)");
         });
-        mas.addEventListener("click",function(){
+        mas.addEventListener("click", function () {
             self.operandos("+");
         });
-        mas.addEventListener("mousedown",function(){
+        mas.addEventListener("mousedown", function () {
             mas.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        mas.addEventListener("mouseout",function(){
+        mas.addEventListener("mouseout", function () {
             mas.setAttribute("style", "transform:scale(1,1)");
         });
-        menos.addEventListener("click",function(){
+        menos.addEventListener("click", function () {
             self.operandos("-");
         });
-        menos.addEventListener("mousedown",function(){
+        menos.addEventListener("mousedown", function () {
             menos.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        menos.addEventListener("mouseout",function(){
+        menos.addEventListener("mouseout", function () {
             menos.setAttribute("style", "transform:scale(1,1)");
         });
-        div.addEventListener("click",function(){
+        div.addEventListener("click", function () {
             self.operandos("/");
         });
-        div.addEventListener("mousedown",function(){
+        div.addEventListener("mousedown", function () {
             div.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        div.addEventListener("mouseout",function(){
+        div.addEventListener("mouseout", function () {
             div.setAttribute("style", "transform:scale(1,1)");
         });
-        por.addEventListener("click",function(){
+        por.addEventListener("click", function () {
             self.operandos("*");
         });
-        por.addEventListener("mousedown",function(){
+        por.addEventListener("mousedown", function () {
             por.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        por.addEventListener("mouseout",function(){
+        por.addEventListener("mouseout", function () {
             por.setAttribute("style", "transform:scale(1,1)");
         });
-        igual.addEventListener("click", function(){
+        igual.addEventListener("click", function () {
             self.operandos("=");
         });
-        igual.addEventListener("mousedown",function(){
+        igual.addEventListener("mousedown", function () {
             igual.setAttribute("style", "transform:scale(0.95,0.95)");
         });
-        igual.addEventListener("mouseout",function(){
+        igual.addEventListener("mouseout", function () {
             igual.setAttribute("style", "transform:scale(1,1)");
         });
-         
+
     },
-    numero: function(n){
-       var num = display.innerHTML;
-       var self = this;
-       var limite = 8;
-     
-       if(num.indexOf(".") != -1){
-        if (n =="."){
-            n = "";
-        }   
-        limite = 9;
-       } 
-        
-       if (num=="0" && n != "."){
-           num = "";
-       }
-       if (operandos.operador.length > 0){
-           num = "";
-           operandos.operadorAnt = operandos.operador;
-           operandos.numAnt = parseFloat(display.innerHTML);
-           operandos.operador = "";
-       }
-       if (display.innerHTML.length < limite) {
-           display.innerHTML = num + n;
-       }
-         
-        
+    numero: function (n) {
+        var num = display.innerHTML;
+        var self = this;
+        var limite = 8;
+
+        if (num.indexOf(".") != -1) {
+            if (n == ".") {
+                n = "";
+            }
+            limite = 9;
+        }
+
+        if (num == "0" && n != ".") {
+            num = "";
+        }
+        if (operandos.operador.length > 0) {
+            num = "";
+            operandos.operadorAnt = operandos.operador;
+            operandos.numAnt = parseFloat(display.innerHTML);
+            operandos.operador = "";
+        }
+        if (display.innerHTML.length < limite) {
+            display.innerHTML = num + n;
+        }
     },
-    signo: function() {
+    signo: function () {
         var cadena = display.innerHTML;
-        cadena = parseInt(cadena)*(-1);
+        cadena = parseInt(cadena) * (-1);
         display.innerHTML = cadena;
         //var i = cadena.indexOf("-");
-       // if (i == -1){
-            //display.innerHTML = "-" + cadena;
+        // if (i == -1){
+        //display.innerHTML = "-" + cadena;
         //} else{
-            //cadena = cadena.substring(1,cadena.length);
-            //display.innerHTML = cadena;
+        //cadena = cadena.substring(1,cadena.length);
+        //display.innerHTML = cadena;
         //}
     },
-    operandos: function(op){
-        switch(op){
-            case "+":   
-                        operandos.operador = op ;
-                        switch(operandos.operadorAnt) {
-                            case "+": 
-                                        operandos.numAnt = operandos.numAnt + parseFloat(display.innerHTML);
-                                        display.innerHTML = operandos.numAnt;
-                                        operandos.operadorAnt = operandos.operador;
-                                        acomodarDisplay();
-                                        break;
-                             case "-": 
-                                        operandos.numAnt = operandos.numAnt - parseFloat(display.innerHTML);
-                                        display.innerHTML = operandos.numAnt;
-                                        operandos.operadorAnt = operandos.operador;
-                                        acomodarDisplay();
-                                        break;
-                            case "*": 
-                                        operandos.numAnt = operandos.numAnt * parseFloat(display.innerHTML);
-                                        display.innerHTML = operandos.numAnt;
-                                        operandos.operadorAnt = operandos.operador;
-                                        acomodarDisplay();
-                                        break;
-                            case "/": 
-                                        operandos.numAnt = operandos.numAnt / parseFloat(display.innerHTML);
-                                        display.innerHTML = operandos.numAnt;
-                                        operandos.operadorAnt = operandos.operador;
-                                        acomodarDisplay();
-                                        break;
-                        }                     
-                         
+    operandos: function (op) {
+        switch (op) {
+            case "+":
+                operandos.operador = op;
+                operandos.operadorAnt = op;
+                operandos.numAnt = parseFloat(display.innerHTML);
+                display.innerHTML = operandos.numAnt;
+                //display.innerHTML = "";
+                acomodarDisplay();
+                break;
+            case "-":
+                operandos.operador = op;
+                operandos.operadorAnt = op;
+                operandos.numAnt = parseFloat(display.innerHTML);
+                display.innerHTML = operandos.numAnt;
+                //display.innerHTML = "";
+                acomodarDisplay();
+                break;
+            case "*":
+                operandos.operador = op;
+                operandos.operadorAnt = op;
+                operandos.numAnt = parseFloat(display.innerHTML);
+                display.innerHTML = operandos.numAnt;
+                //display.innerHTML = "";
+                acomodarDisplay();
+                break;
+            case "/":
+                operandos.operador = op;
+                operandos.operadorAnt = op;
+                operandos.numAnt = parseFloat(display.innerHTML);
+                //display.innerHTML = "";
+                acomodarDisplay();
+                break;
+            case "=":
+                var result = 0;
+
+                switch (operandos.operadorAnt) {
+                    case "+":
+                        result = parseFloat(operandos.numAnt) + parseFloat(display.innerHTML);
                         break;
-            case "-": 
-                       operandos.operador = op;                    
-                        switch(operandos.operadorAnt) {
-                            case "+": 
-                                        operandos.numAnt = operandos.numAnt + parseFloat(display.innerHTML);
-                                        display.innerHTML = operandos.numAnt;
-                                        operandos.operadorAnt = operandos.operador;
-                                        acomodarDisplay();
-                                        break;
-                             case "-": 
-                                        operandos.numAnt = operandos.numAnt - parseFloat(display.innerHTML);
-                                        display.innerHTML = operandos.numAnt;
-                                        operandos.operadorAnt = operandos.operador;
-                                        acomodarDisplay();
-                                        break;
-                            case "*": 
-                                        operandos.numAnt = operandos.numAnt * parseFloat(display.innerHTML);
-                                        display.innerHTML = operandos.numAnt;
-                                        operandos.operadorAnt = operandos.operador;
-                                        acomodarDisplay();
-                                        break;
-                            case "/": 
-                                        operandos.numAnt = operandos.numAnt / parseFloat(display.innerHTML);
-                                        display.innerHTML = operandos.numAnt;
-                                        operandos.operadorAnt = operandos.operador;
-                                        acomodarDisplay();
-                                        break;
-                        }    
-                         
+                    case "-":
+                        result = parseFloat(operandos.numAnt) - parseFloat(display.innerHTML);
                         break;
-            case "*": 
-                        operandos.operador = op;                     
-                        switch(operandos.operadorAnt) {
-                            case "+": 
-                                        operandos.numAnt = operandos.numAnt + parseFloat(display.innerHTML);
-                                        display.innerHTML = operandos.numAnt;
-                                        operandos.operadorAnt = operandos.operador;
-                                        acomodarDisplay();
-                                        break;
-                             case "-": 
-                                        operandos.numAnt = operandos.numAnt - parseFloat(display.innerHTML);
-                                        display.innerHTML = operandos.numAnt;
-                                        operandos.operadorAnt = operandos.operador;
-                                        acomodarDisplay();
-                                        break;
-                            case "*": 
-                                        operandos.numAnt = operandos.numAnt * parseFloat(display.innerHTML);
-                                        display.innerHTML = operandos.numAnt;
-                                        operandos.operadorAnt = operandos.operador;
-                                        acomodarDisplay();
-                                        break;
-                            case "/": 
-                                        operandos.numAnt = operandos.numAnt / parseFloat(display.innerHTML);
-                                        display.innerHTML = operandos.numAnt;
-                                        operandos.operadorAnt = operandos.operador;
-                                        acomodarDisplay();
-                                        break;
-                        }    
-                        
+                    case "/":
+                        result = parseFloat(operandos.numAnt) / parseFloat(display.innerHTML);
                         break;
-            case "/": 
-                        operandos.operador = op;                       
-                        if (operandos.operadorAnt.length > 0){
-                            operandos.numAnt = operandos.numAnt / parseFloat(display.innerHTML);
-                            display.innerHTML = operandos.numAnt;
-                            acomodarDisplay();
-                        }  
-                         
+                    case "*":
+                        result = parseFloat(operandos.numAnt) * parseFloat(display.innerHTML);
                         break;
-             case "=":  
-                        switch(operandos.operadorAnt){
-                            case "+" : 
-                                        operandos.numAnt += parseFloat(display.innerHTML);
-                                        break;
-                            case "-" : 
-                                        operandos.numAnt -= parseFloat(display.innerHTML);
-                                        break;
-                             case "/" : 
-                                        operandos.numAnt /= parseFloat(display.innerHTML); 
-                                        break;
-                             case "*" : 
-                                        operandos.numAnt *= parseFloat(display.innerHTML);
-                                        break;
-                        }
-                        display.innerHTML = operandos.numAnt;
-                        acomodarDisplay();
-                        operandos.operadorAnt = "";
-                        operandos.operador = "";
-                        break;
+                }
+                display.innerHTML = result;
+                acomodarDisplay();
+                operandos.operadorAnt = "";
+                operandos.operador = "";
+                break;
         }
- 
+
     }
 };
-function acomodarDisplay(){
-    var cadena = display.innerHTML;
-    var numero = parseFloat(cadena);
-     var limite = 8;
-    if (cadena.indexOf(".") != -1){
-        limite++;
-    }
-    if (cadena.indexOf("-") != -1){
-        limite++;
-    }
-     
-    if (cadena.length > limite){
-        if (numero - numero.toFixed(0) == 0){
-            display.innerHTML = numero;
-        }
-         else {
-             display.innerHTML = parseFloat(cadena).toPrecision(8);
-         }
-         
-    }
+function acomodarDisplay() {
+
+    display.textContent = display.textContent.substring(0, 8);
 }
- 
+
 calculadora.init();
-
-
-  
